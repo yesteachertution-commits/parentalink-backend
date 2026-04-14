@@ -12,14 +12,17 @@ const emailOtpRoutes = require("./emailOtpRoutes"); // Import the email OTP rout
 const authkeyWebhookRoutes = require("./authkeyWebhookRoutes");
 const parentRoutes = require("./parentRoutes");
 
+const gradesRoutes = require("./gradesRoutes");
+
 // Use the routes
-router.use("/create", studentRoutes); // All routes for students will now be prefixed with /students
-router.use("/notification", notRoutes); // If you have authentication-related routes
+router.use("/create", studentRoutes);
+router.use("/notification", notRoutes);
 router.use("/marks-get", marksRoutes);
 router.use("/marks", marksNotification);
+router.use("/grades", gradesRoutes);
 router.use("/user", userauthroutes);
-router.use("/save", attendanceroutes )
-router.use("/email-otp", emailOtpRoutes); // Use the email OTP routes
+router.use("/save", attendanceroutes);
+router.use("/email-otp", emailOtpRoutes);
 router.use("/authkey-webhook", authkeyWebhookRoutes);
 router.use("/parent", parentRoutes);
 
